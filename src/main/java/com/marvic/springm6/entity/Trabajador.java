@@ -22,10 +22,10 @@ public class Trabajador {
     @Column
     private String email;
     //Todo: Crear relacion y FK
-    @Column(name = "inst_prevision")
-    private String instPrevision;
-    @Column(name = "inst_salud")
-    private int instSalud;
+    @Column(name = "id_inst_prevision")
+    private String idInstPrevision;
+    @Column(name = "id_inst_salud")
+    private int idInstSalud;
     @Column
     private long telefono;
 }
