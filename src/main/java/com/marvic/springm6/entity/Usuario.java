@@ -24,7 +24,7 @@ public class Usuario {
     private String apellido1;
     @Column(name = "apellido_2")
     private String apellido2;
-    //Todo: Crear relacion y FK
+    //Relacion usuario-perfil
     @ManyToOne(optional = false,cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinColumn(name = "id_perfil",nullable = false)
     private Perfil perfil;
@@ -34,6 +34,7 @@ public class Usuario {
     private LocalDate fechaCreacion;
     @Column
     private long telefono;
+    //Relacion usuario-empleador
     @OneToMany(mappedBy = "usuario")
     List<Empleador> listaEmpleador;
 }

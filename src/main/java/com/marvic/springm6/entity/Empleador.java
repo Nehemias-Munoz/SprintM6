@@ -26,12 +26,13 @@ public class Empleador {
     private String direccion;
     @Column
     private String email;
+    //Relacion usuario
     @ManyToOne(optional = false,cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinColumn(name = "id_usuario",nullable = false)
     private Usuario usuario;
     @Column
     private long telefono;
-
+    //Relacion tabla intermedia
     @ManyToMany
     @JoinTable(name = "Empl_Trab",
             joinColumns = @JoinColumn(name = "id_empleador", nullable = false),
