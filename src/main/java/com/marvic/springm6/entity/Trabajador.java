@@ -26,7 +26,7 @@ public class Trabajador {
 
 
     @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "id_inst_previson",nullable = false)
+    @JoinColumn(name = "id_inst_prevision",nullable = false)
     private InstitucionPrevision instPrevision;
 
 
@@ -40,4 +40,7 @@ public class Trabajador {
 
     @ManyToMany(mappedBy = "listaTrabajadores")
     List<Empleador> listaEmpleadores;
+
+    @OneToMany(mappedBy = "trabajador")
+    List<Liquidacion> listaLiquidaciones;
 }
