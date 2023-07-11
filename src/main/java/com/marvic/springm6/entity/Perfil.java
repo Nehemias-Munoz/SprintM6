@@ -9,7 +9,6 @@ import lombok.Data;
 public class Perfil {
     @Id
     @Column(name = "id_perfil")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idPerfil;
     @Column
     private String descripcion;

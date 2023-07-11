@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Primary;
 @Table(name = "Institucion_Salud")
 public class InstitucionSalud {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_inst_salud")
     private int idInstSalud;
     @Column

@@ -8,7 +8,6 @@ import lombok.Data;
 @Table(name = "Institucion_Prevision")
 public class InstitucionPrevision {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_inst_prevision")
     private int idInstPrevision;
     @Column
