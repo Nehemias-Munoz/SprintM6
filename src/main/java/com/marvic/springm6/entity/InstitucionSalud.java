@@ -20,7 +20,7 @@ public class InstitucionSalud {
     @OneToMany(mappedBy = "instSalud")
     List<Trabajador> listaTrabajadores;
 
-    @OneToMany(mappedBy = "instPrevisional")
+    @OneToMany(mappedBy = "instSalud")
     List<Liquidacion> listaLiquidaciones;
 
 }
