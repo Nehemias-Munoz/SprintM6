@@ -13,8 +13,12 @@ public class Liquidacion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_liquidacion")
     private long idLiquidacion;
-    @Column(name = "id_trabajador")
-    private int idTrabajador;
+
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL,optional = false)
+    @JoinColumn(name = "id_trabajador")
+    private Trabajador trabajador;
+
+
     @Column
     private LocalDate periodo;
     @Column(name = "sueldo_imponible")
