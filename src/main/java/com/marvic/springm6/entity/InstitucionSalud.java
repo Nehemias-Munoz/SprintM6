@@ -16,10 +16,10 @@ public class InstitucionSalud {
     private String descripcion;
     @Column(name = "porc_dcto")
     private float porcDcto;
-
+    //Relacion inst. salud - trabajador
     @OneToMany(mappedBy = "instSalud")
     List<Trabajador> listaTrabajadores;
-
+    //Relacion inst. salud - liquidacion
     @OneToMany(mappedBy = "instSalud")
     List<Liquidacion> listaLiquidaciones;
 
