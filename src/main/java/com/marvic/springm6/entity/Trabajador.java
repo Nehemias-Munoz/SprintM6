@@ -3,6 +3,8 @@ package com.marvic.springm6.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 @Entity
 @Table(name = "Trabajador")
@@ -21,11 +23,21 @@ public class Trabajador {
     private String apellido2;
     @Column
     private String email;
-    //Todo: Crear relacion y FK
-    @Column(name = "id_inst_prevision")
-    private String idInstPrevision;
-    @Column(name = "id_inst_salud")
-    private int idInstSalud;
+
+
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(name = "id_inst_previson",nullable = false)
+    private InstitucionPrevision instPrevision;
+
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(name = "id_inst_salud", nullable = false)
+    private InstitucionSalud instSalud;
+
+
     @Column
     private long telefono;
+
+    @ManyToMany(mappedBy = "listaTrabajadores")
+    List<Empleador> listaEmpleadores;
 }

@@ -2,7 +2,8 @@ package com.marvic.springm6.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.springframework.context.annotation.Primary;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -15,4 +16,11 @@ public class InstitucionSalud {
     private String descripcion;
     @Column(name = "porc_dcto")
     private float porcDcto;
+
+    @OneToMany(mappedBy = "instSalud")
+    List<Trabajador> listaTrabajadores;
+
+    @OneToMany(mappedBy = "instPrevisional")
+    List<Liquidacion> listaLiquidaciones;
+
 }

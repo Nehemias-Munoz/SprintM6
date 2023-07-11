@@ -21,14 +21,21 @@ public class Liquidacion {
     private int sueldoImponible;
     @Column(name = "sueldo_liquido")
     private int sueldoLiquido;
-    @Column(name = "id_inst_salud")
-    private int idInstSalud;
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL,optional = false)
+    @JoinColumn(name = "id_inst_salud",nullable = false)
+    private InstitucionSalud instSalud;
+
     @Column(name = "monto_inst_salud")
     private int montoInstSalud;
-    @Column(name = "id_inst_previsional")
-    private int idInstPrevisional;
+
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL,optional = false)
+    @JoinColumn(name = "id_inst_previsional",nullable = false)
+    private InstitucionPrevision instPrevisional;
+
     @Column(name = "monto_inst_previsional")
     private int montoInstPrevisional;
+
     @Column(name = "total_descuento")
     private int totalDescuento;
     @Column(name = "total_haberes")

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @Entity
@@ -25,9 +26,16 @@ public class Empleador {
     private String direccion;
     @Column
     private String email;
-    @Column(name = "id_usuario")
-    //Todo: Crear relacion y FK
-    private int idUsuario;
+    @ManyToOne(optional = false,cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_usuario",nullable = false)
+    private Usuario usuario;
     @Column
     private long telefono;
+
+    @ManyToMany
+    @JoinTable(name = "Empl_Trab",
+            joinColumns = @JoinColumn(name = "id_empleador", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "id_trabajador", nullable = false))
+    private List<Trabajador> listaTrabajadores;
+
 }

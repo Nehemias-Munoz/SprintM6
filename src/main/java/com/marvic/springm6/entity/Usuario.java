@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @Entity
@@ -23,13 +24,16 @@ public class Usuario {
     private String apellido1;
     @Column(name = "apellido_2")
     private String apellido2;
-    @Column(name = "id_perfil")
     //Todo: Crear relacion y FK
-    private int idPerfil;
+    @ManyToOne(optional = false,cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_perfil",nullable = false)
+    private Perfil perfil;
     @Column
     private String email;
     @Column(name = "fecha_creacion")
     private LocalDate fechaCreacion;
     @Column
     private long telefono;
+    @OneToMany(mappedBy = "usuario")
+    List<Empleador> listaEmpleador;
 }
