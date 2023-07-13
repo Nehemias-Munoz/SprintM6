@@ -25,32 +25,41 @@ public class EmpleadorImpl implements IEmpleadorService {
      */
     @Override
     public Empleador crearEmpleador(Empleador empleador) {
-        return objIEmpleadorRepository.save();
+        return objIEmpleadorRepository.save(empleador);
     }
 
-    /**
+    /** Buscar empleador por id
      * @param idEmpleador
-     * @return
+     * @return Object Empleador
      */
     @Override
     public Empleador buscarEmpleadorPorId(int idEmpleador) {
         return null;
     }
 
-    /**
+    /** Actualizar empleador por id
      * @param empleador
-     * @return
+     * @return Object Empleador
      */
     @Override
     public Empleador actualizarEmpleador(Empleador empleador) {
-        return null;
+        Empleador empleador1 = this.buscarEmpleadorPorId(empleador.getIdEmpleador());
+        empleador1.setRun(empleador.getRun());
+        empleador1.setNombre(empleador.getNombre());
+        empleador1.setApellido1(empleador.getApellido1());
+        empleador1.setApellido2(empleador.getApellido2());
+        empleador1.setDireccion(empleador.getDireccion());
+        empleador1.setEmail(empleador.getEmail());
+        empleador1.setUsuario(empleador.getUsuario());
+        empleador1.setTelefono(empleador.getTelefono());
+        return objIEmpleadorRepository.save(empleador1);
     }
 
-    /**
+    /**Eliminar Empleador por id
      * @param idEmpleador
      */
     @Override
     public void eliminarEmpleadorPorId(int idEmpleador) {
-
+        objIEmpleadorRepository.deleteById(idEmpleador);
     }
 }

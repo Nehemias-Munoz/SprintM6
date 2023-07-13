@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface IInstitucionPrevision {
     List<InstitucionPrevision> listarInstitucionPrevision();
-    InstitucionPrevision crearInstitucionPrevision(InstitucionPrevision institucionPrevision);
-    InstitucionPrevision buscarInstitucionPrevisionPorId(int idInstitucionPrevision);
-    InstitucionPrevision actualizarInstitucionPrevision(InstitucionPrevision institucionPrevision);
-    void eliminarInstitucionPrevisionPorId(int idInstitucionPrevision);
+//    InstitucionPrevision crearInstitucionPrevision(InstitucionPrevision institucionPrevision);
+//    InstitucionPrevision buscarInstitucionPrevisionPorId(int idInstitucionPrevision);
+//    InstitucionPrevision actualizarInstitucionPrevision(InstitucionPrevision institucionPrevision);
+//    void eliminarInstitucionPrevisionPorId(int idInstitucionPrevision);
 }

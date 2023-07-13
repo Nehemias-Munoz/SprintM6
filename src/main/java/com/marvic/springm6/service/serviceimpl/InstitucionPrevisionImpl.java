@@ -1,51 +1,22 @@
 package com.marvic.springm6.service.serviceimpl;
 
 import com.marvic.springm6.entity.InstitucionPrevision;
+import com.marvic.springm6.repository.IInstPrevisionRepository;
 import com.marvic.springm6.service.IInstitucionPrevision;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service("institucionPrevisionImpl")
 public class InstitucionPrevisionImpl implements IInstitucionPrevision {
-    /**
-     * @return
+    @Autowired
+    IInstPrevisionRepository objIInstPrevisionRepository;
+    /**Listar instituciones
+     * @return List object instituciones previsionales
      */
     @Override
     public List<InstitucionPrevision> listarInstitucionPrevision() {
-        return null;
-    }
-
-    /**
-     * @param institucionPrevision
-     * @return
-     */
-    @Override
-    public InstitucionPrevision crearInstitucionPrevision(InstitucionPrevision institucionPrevision) {
-        return null;
-    }
-
-    /**
-     * @param idInstitucionPrevision
-     * @return
-     */
-    @Override
-    public InstitucionPrevision buscarInstitucionPrevisionPorId(int idInstitucionPrevision) {
-        return null;
-    }
-
-    /**
-     * @param institucionPrevision
-     * @return
-     */
-    @Override
-    public InstitucionPrevision actualizarInstitucionPrevision(InstitucionPrevision institucionPrevision) {
-        return null;
-    }
-
-    /**
-     * @param idInstitucionPrevision
-     */
-    @Override
-    public void eliminarInstitucionPrevisionPorId(int idInstitucionPrevision) {
-
+        return objIInstPrevisionRepository.findAll();
     }
 }

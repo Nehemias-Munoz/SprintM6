@@ -1,51 +1,70 @@
 package com.marvic.springm6.service.serviceimpl;
 
 import com.marvic.springm6.entity.Liquidacion;
+import com.marvic.springm6.repository.ILiquidacionRepository;
 import com.marvic.springm6.service.ILiquidacionService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
+@Service("liquidacionImpl")
 public class LiquidacionImpl implements ILiquidacionService {
-    /**
-     * @return
+    @Autowired
+    ILiquidacionRepository objILiquidacionRepo;
+    /**Listar usuarios
+     * @return List object usuario
      */
     @Override
     public List<Liquidacion> listarLiquidaciones() {
-        return null;
+        return objILiquidacionRepo.findAll();
     }
 
-    /**
+    /**Crear liquidaciones
      * @param liquidacion
-     * @return
+     * @return List object liquidaciones
      */
     @Override
     public Liquidacion crearLiquidacion(Liquidacion liquidacion) {
-        return null;
+        return objILiquidacionRepo.save(liquidacion);
     }
 
-    /**
+    /**Crear liquidacion
      * @param idLiquidacion
-     * @return
+     * @return Object liquidacion
      */
     @Override
-    public Liquidacion buscarLiquidacionPorId(int idLiquidacion) {
-        return null;
+    public Liquidacion buscarLiquidacionPorId(long idLiquidacion) {
+        return objILiquidacionRepo.findById(idLiquidacion).orElseThrow(()->new NoSuchElementException("Liquidacion no encontrada"));
     }
 
-    /**
+    /**Buscar liquidacion por id
      * @param liquidacion
-     * @return
+     * @return Object Liquidacion
      */
     @Override
     public Liquidacion actualizarLiquidacion(Liquidacion liquidacion) {
-        return null;
+        Liquidacion liquidacion1 = this.buscarLiquidacionPorId( liquidacion.getIdLiquidacion());
+        liquidacion1.setTrabajador(liquidacion.getTrabajador());
+        liquidacion1.setPeriodo(liquidacion.getPeriodo());
+        liquidacion1.setSueldoImponible(liquidacion.getSueldoImponible());
+        liquidacion1.setSueldoLiquido(liquidacion.getSueldoLiquido());
+        liquidacion1.setInstSalud(liquidacion.getInstSalud());
+        liquidacion1.setMontoInstSalud(liquidacion.getMontoInstSalud());
+        liquidacion1.setInstPrevisional(liquidacion.getInstPrevisional());
+        liquidacion1.setMontoInstPrevisional(liquidacion.getMontoInstPrevisional());
+        liquidacion1.setTotalDescuento(liquidacion.getTotalDescuento());
+        liquidacion1.setTotalHaberes(liquidacion.getTotalHaberes());
+        liquidacion1.setAnticipo(liquidacion.getAnticipo());
+        return objILiquidacionRepo.save(liquidacion1);
     }
 
-    /**
+    /**Eliminar liquidacion por id
      * @param idLiquidacion
      */
     @Override
-    public void eliminarLiquidacionPorId(int idLiquidacion) {
-
+    public void eliminarLiquidacionPorId(long idLiquidacion) {
+        objILiquidacionRepo.deleteById(idLiquidacion);
     }
 }

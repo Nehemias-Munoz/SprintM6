@@ -1,51 +1,21 @@
 package com.marvic.springm6.service.serviceimpl;
 
 import com.marvic.springm6.entity.Perfil;
+import com.marvic.springm6.repository.IPerfilRepository;
 import com.marvic.springm6.service.IPerfilService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service("perfilImpl")
 public class PerfilImpl implements IPerfilService {
-    /**
-     * @return
+
+    IPerfilRepository objIPerfilRepository;
+    /**Listar Perfiles
+     * @return List Object perfil
      */
     @Override
     public List<Perfil> listarPerfiles() {
-        return null;
+        return objIPerfilRepository.findAll();
     }
 
-    /**
-     * @param perfil
-     * @return
-     */
-    @Override
-    public Perfil crearPerfil(Perfil perfil) {
-        return null;
-    }
-
-    /**
-     * @param idPerfil
-     * @return
-     */
-    @Override
-    public Perfil buscarPerfilPorId(int idPerfil) {
-        return null;
-    }
-
-    /**
-     * @param perfil
-     * @return
-     */
-    @Override
-    public Perfil actualizarPerfil(Perfil perfil) {
-        return null;
-    }
-
-    /**
-     * @param idPerfil
-     */
-    @Override
-    public void eliminarPerfilPorId(int idPerfil) {
-
-    }
 }
