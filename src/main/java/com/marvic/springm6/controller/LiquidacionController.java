@@ -16,7 +16,7 @@ public class LiquidacionController {
     ILiquidacionService objILiquidacionService;
 
     @GetMapping
-    public String listarLiquidacions(Model model) {
+    public String listarLiquidaciones(Model model) {
         List<Liquidacion> listaLiquidaciones = objILiquidacionService.listarLiquidaciones();
         model.addAttribute("liquidaciones", listaLiquidaciones);
         return "listarLiquidaciones";
