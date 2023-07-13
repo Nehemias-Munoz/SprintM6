@@ -1,26 +1,31 @@
 package com.marvic.springm6.service.serviceimpl;
 
 import com.marvic.springm6.entity.Empleador;
+import com.marvic.springm6.repository.IEmpleadorRepository;
 import com.marvic.springm6.service.IEmpleadorService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service("empleadorImpl")
 public class EmpleadorImpl implements IEmpleadorService {
-    /**
-     * @return
+
+    IEmpleadorRepository objIEmpleadorRepository;
+    /** Listar Empleadores
+     * @return Lista object empleador
      */
     @Override
     public List<Empleador> listarEmpleador() {
-        return null;
+        return objIEmpleadorRepository.findAll();
     }
 
-    /**
+    /** Crear empleador
      * @param empleador
-     * @return
+     * @return Object Empleador
      */
     @Override
     public Empleador crearEmpleador(Empleador empleador) {
-        return null;
+        return objIEmpleadorRepository.save();
     }
 
     /**

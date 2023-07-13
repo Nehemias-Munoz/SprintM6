@@ -13,8 +13,8 @@ import java.util.NoSuchElementException;
 public class UsuarioImpl implements IUsuarioService {
     @Autowired
     IUsuarioRepository objUsuarioRepo;
-    /**
-     * @return
+    /**Listar usuarios
+     * @return List object usuarios
      */
     @Override
     public List<Usuario> listarUsuarios() {
@@ -40,7 +40,7 @@ public class UsuarioImpl implements IUsuarioService {
         return objUsuarioRepo.findById(idUsuario).orElseThrow(()->new NoSuchElementException("Usuario no encontrado"));
     }
 
-    /** Actualizar usarios por id
+    /** Actualizar usuarios por id
      * @param usuario
      * @return Object Usuario
      */
