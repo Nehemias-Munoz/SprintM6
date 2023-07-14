@@ -2,11 +2,13 @@ package com.marvic.springm6.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
+@ToString
 @Entity
 @Table(name="Usuario")
 public class Usuario {
@@ -25,13 +27,13 @@ public class Usuario {
     @Column(name = "apellido_2")
     private String apellido2;
     //Relacion usuario-perfil
-    @ManyToOne(optional = false,cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @ManyToOne(optional = false,fetch = FetchType.EAGER)
     @JoinColumn(name = "id_perfil",nullable = false)
     private Perfil perfil;
     @Column
     private String email;
     @Column(name = "fecha_creacion")
-    private LocalDate fechaCreacion;
+    private LocalDateTime fechaCreacion;
     @Column
     private long telefono;
     //Relacion usuario-empleador
