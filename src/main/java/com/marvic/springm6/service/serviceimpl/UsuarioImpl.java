@@ -45,8 +45,8 @@ public class UsuarioImpl implements IUsuarioService {
      * @return Object Usuario
      */
     @Override
-    public Usuario actualizarUsuario(Usuario usuario) {
-        Usuario usuario1 = this.buscarUsuarioPorId(usuario.getIdUsuario());
+    public Usuario actualizarUsuario(int idUsuario, Usuario usuario) {
+        Usuario usuario1 = this.buscarUsuarioPorId(idUsuario);
         usuario1.setNombre(usuario.getNombre());
         usuario1.setApellido1(usuario.getApellido1());
         usuario1.setApellido2(usuario.getApellido2());

@@ -8,6 +8,6 @@ public interface IUsuarioService {
     List<Usuario> listarUsuarios();
     Usuario crearUsuario(Usuario usuario);
     Usuario buscarUsuarioPorId(int idUsuario);
-    Usuario actualizarUsuario(Usuario usuario);
+    Usuario actualizarUsuario(int idUsuario,Usuario usuario);
     void eliminarUsuarioPorId(int idUsuario);
 }
