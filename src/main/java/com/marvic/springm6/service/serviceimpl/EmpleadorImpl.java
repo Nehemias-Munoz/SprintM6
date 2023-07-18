@@ -3,20 +3,23 @@ package com.marvic.springm6.service.serviceimpl;
 import com.marvic.springm6.entity.Empleador;
 import com.marvic.springm6.repository.IEmpleadorRepository;
 import com.marvic.springm6.service.IEmpleadorService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service("empleadorImpl")
 public class EmpleadorImpl implements IEmpleadorService {
 
-    IEmpleadorRepository objIEmpleadorRepository;
+    @Autowired
+    IEmpleadorRepository objIEmpleadorRepo;
     /** Listar Empleadores
      * @return Lista object empleador
      */
     @Override
     public List<Empleador> listarEmpleador() {
-        return objIEmpleadorRepository.findAll();
+        return objIEmpleadorRepo.findAll();
     }
 
     /** Crear empleador
@@ -25,7 +28,7 @@ public class EmpleadorImpl implements IEmpleadorService {
      */
     @Override
     public Empleador crearEmpleador(Empleador empleador) {
-        return objIEmpleadorRepository.save(empleador);
+        return objIEmpleadorRepo.save(empleador);
     }
 
     /** Buscar empleador por id
@@ -34,7 +37,7 @@ public class EmpleadorImpl implements IEmpleadorService {
      */
     @Override
     public Empleador buscarEmpleadorPorId(int idEmpleador) {
-        return null;
+        return objIEmpleadorRepo.findById(idEmpleador).orElseThrow(()-> new NoSuchElementException("Empleador no encontrado"));
     }
 
     /** Actualizar empleador por id
@@ -42,8 +45,8 @@ public class EmpleadorImpl implements IEmpleadorService {
      * @return Object Empleador
      */
     @Override
-    public Empleador actualizarEmpleador(Empleador empleador) {
-        Empleador empleador1 = this.buscarEmpleadorPorId(empleador.getIdEmpleador());
+    public Empleador actualizarEmpleador(int idEmpleador, Empleador empleador) {
+        Empleador empleador1 = this.buscarEmpleadorPorId(idEmpleador);
         empleador1.setRun(empleador.getRun());
         empleador1.setNombre(empleador.getNombre());
         empleador1.setApellido1(empleador.getApellido1());
@@ -52,7 +55,7 @@ public class EmpleadorImpl implements IEmpleadorService {
         empleador1.setEmail(empleador.getEmail());
         empleador1.setUsuario(empleador.getUsuario());
         empleador1.setTelefono(empleador.getTelefono());
-        return objIEmpleadorRepository.save(empleador1);
+        return objIEmpleadorRepo.save(empleador1);
     }
 
     /**Eliminar Empleador por id
@@ -60,6 +63,6 @@ public class EmpleadorImpl implements IEmpleadorService {
      */
     @Override
     public void eliminarEmpleadorPorId(int idEmpleador) {
-        objIEmpleadorRepository.deleteById(idEmpleador);
+        objIEmpleadorRepo.deleteById(idEmpleador);
     }
 }

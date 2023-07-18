@@ -8,6 +8,6 @@ public interface IEmpleadorService {
     List<Empleador> listarEmpleador();
     Empleador crearEmpleador(Empleador empleador);
     Empleador buscarEmpleadorPorId(int idEmpleador);
-    Empleador actualizarEmpleador(Empleador empleador);
+    Empleador actualizarEmpleador(int idEmpleador, Empleador empleador);
     void eliminarEmpleadorPorId(int idEmpleador);
 }
