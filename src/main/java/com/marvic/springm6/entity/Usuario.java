@@ -3,14 +3,13 @@ package com.marvic.springm6.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
-
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
 @ToString
 @Entity
-@Table(name="Usuario")
+@Table(name = "Usuario")
 public class Usuario {
     @Id
     @Column(name = "id_usuario")
@@ -26,9 +25,9 @@ public class Usuario {
     private String apellido1;
     @Column(name = "apellido_2")
     private String apellido2;
-    //Relacion usuario-perfil
-    @ManyToOne(optional = false,fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_perfil",nullable = false)
+    // Relacion usuario-perfil
+    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_perfil", nullable = false)
     private Perfil perfil;
     @Column
     private String email;
@@ -36,7 +35,7 @@ public class Usuario {
     private LocalDateTime fechaCreacion;
     @Column
     private long telefono;
-    //Relacion usuario-empleador
+    // Relacion usuario-empleador
     @OneToMany(mappedBy = "usuario")
     List<Empleador> listaEmpleador;
 }
