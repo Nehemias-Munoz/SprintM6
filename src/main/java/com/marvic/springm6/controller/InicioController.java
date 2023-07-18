@@ -17,4 +17,9 @@ public class InicioController {
     public String registro(){
         return "registro";
     }
+
+    @GetMapping("/bienvenida")
+    public String bienvenida(){
+        return "bienvenida";
+    }
 }

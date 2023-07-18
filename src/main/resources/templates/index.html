@@ -15,10 +15,9 @@
     />
   </head>
   <body class="bg-light p-3">
-    <header th:include="~{../static/html/header.html}">
-    </header>
+    <header th:include="~{../static/html/header.html}"></header>
     <main>
-      <section class="bg-light">
+      <section class="bg-light p-3">
         <h1>Liquidacion de Sueldo Para Trabajadores de Casa</h1>
         <p>
           Podrás crear liquidaciones de sueldo para tus trabajadores de casa
@@ -42,75 +41,79 @@
           </button>
         </div>
       </section>
-      <section class="m-3 bg-white p-3">
-        <h3 class="text-center">Caracteristicas</h3>
-        <div class="row">
-          <div class="col-2">
-            <img
-              src="https://placekitten.com/200/300"
-              alt="gatito"
-              height="70"
-            />
-          </div>
-          <div class="col-md">
-            <h3>List-based media object</h3>
-            <p>
-              Nisi non ullamco Lorem excepteur irure amet aliquip officia ad
-              dolor. Est sunt nulla eiusmod eiusmod adipisicing aliqua. Aute
-              deserunt minim cillum eu adipisicing consequat excepteur.
-              Incididunt nostrud dolor consectetur culpa ipsum veniam.
-            </p>
+      <section class="m-3">
+        <div class="card p-3">
+          <h3 class="text-center">Caracteristicas</h3>
+          <div class="row">
+            <div class="col-2">
+              <img
+                src="https://placekitten.com/200/300"
+                alt="gatito"
+                height="70"
+              />
+            </div>
+            <div class="col-md">
+              <h3>List-based media object</h3>
+              <p>
+                Nisi non ullamco Lorem excepteur irure amet aliquip officia ad
+                dolor. Est sunt nulla eiusmod eiusmod adipisicing aliqua. Aute
+                deserunt minim cillum eu adipisicing consequat excepteur.
+                Incididunt nostrud dolor consectetur culpa ipsum veniam.
+              </p>
+            </div>
           </div>
         </div>
       </section>
-      <section class="m-3 p-3 bg-white">
-        <h3 class="text-center">Contacto</h3>
-        <div class="row">
-          <div class="col-md">
-            <img
-              src="https://placekitten.com/300/300"
-              alt="gatito"
-              height="400"
-            />
-          </div>
-          <div class="col-md">
-            <form action="" method="post">
-              <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input
-                  type="name"
-                  class="form-control"
-                  id="nombre"
-                  name="nombre"
-                />
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  name="email"
-                  aria-describedby="emailHelp"
-                />
-                <div id="emailHelp" class="form-text">
-                  Nunca compartiremos tu email.
-                </div>
-              </div>
-              <div class="mb-3">
-                <label for="floatingTextarea">Ingrese su mensaje</label>
-                <div class="form-floating">
-                  <textarea
+      <section class="m-3 container-fluid">
+        <div class="card p-3">
+          <h3 class="text-center">Contacto</h3>
+          <div class="row">
+            <div class="col-md">
+              <img
+                src="https://placekitten.com/300/300"
+                alt="gatito"
+                height="400"
+              />
+            </div>
+            <div class="col-md">
+              <form action="" method="post">
+                <div class="mb-3">
+                  <label for="nombre" class="form-label">Nombre</label>
+                  <input
+                    type="name"
                     class="form-control"
-                    placeholder="Leave a comment here"
-                    id="floatingTextarea"
-                    name="mensaje"
-                    style="height: 100px"
-                  ></textarea>
+                    id="nombre"
+                    name="nombre"
+                  />
                 </div>
-              </div>
-              <button type="submit" class="btn btn-success">Enviar</button>
-            </form>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    aria-describedby="emailHelp"
+                  />
+                  <div id="emailHelp" class="form-text">
+                    Nunca compartiremos tu email.
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="floatingTextarea">Ingrese su mensaje</label>
+                  <div class="form-floating">
+                    <textarea
+                      class="form-control"
+                      placeholder="Leave a comment here"
+                      id="floatingTextarea"
+                      name="mensaje"
+                      style="height: 100px"
+                    ></textarea>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-success">Enviar</button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
