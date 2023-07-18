@@ -44,8 +44,8 @@ public class TrabajadorImpl implements ITrabajadorService {
      * @return Object trabjador
      */
     @Override
-    public Trabajador actualizarTrabajador(Trabajador trabajador) {
-        Trabajador trabajador1 = this.buscarTrabajadorPorId(trabajador.getIdTrabajador());
+    public Trabajador actualizarTrabajador(int idTrabajador,Trabajador trabajador) {
+        Trabajador trabajador1 = this.buscarTrabajadorPorId(idTrabajador);
         trabajador1.setNombre(trabajador.getNombre());
         trabajador1.setApellido1(trabajador.getApellido1());
         trabajador1.setApellido2(trabajador.getApellido2());
