@@ -1,0 +1,54 @@
+<header>
+  <nav class="navbar bg-body-tertiary navbar-expand">
+    <div class="container-fluid">
+      <a class="navbar-brand">Logo</a>
+      <div class="d-flex">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/bienvenida">Inicio</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Usuario</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/usuario/crearUsuario">Agregar Usuario</a>
+              <a class="dropdown-item" href="/usuario">Ver Usuario</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Empleador</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/empleador/crearEmpleador">Agregar Empleador</a>
+              <a class="dropdown-item" href="/empleador">Ver Empleador</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Trabajador</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/trabajador/crearTrabajador">Agregar Trabajador</a>
+              <a class="dropdown-item" href="/trabajador">Ver Trabajador</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Liquidacion</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/liquidacion/crearLiquidacion">Agregar Liquidacion</a>
+              <a class="dropdown-item" href="/liquidacion">Ver Liquidacion</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <button
+                    class="btn btn-outline-success"
+                    type="button"
+                    onclick="window.location.href='/inicioSesion';"
+            >
+              Cerrar Sesion
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
