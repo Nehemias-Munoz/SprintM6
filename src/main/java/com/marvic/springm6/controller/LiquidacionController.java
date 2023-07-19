@@ -52,7 +52,7 @@ public class LiquidacionController {
     }
 
     @PostMapping("/editar/{idLiquidacion}")
-    public String mostrarFormularioEditarLiquidacion(@PathVariable int idLiquidacion, Model model){
+    public String mostrarFormularioEditarLiquidacion(@PathVariable long idLiquidacion, Model model){
         model.addAttribute("liquidacion", objILiquidacionService.buscarLiquidacionPorId(idLiquidacion));
         model.addAttribute("trabajadores", objITrabajadorService.listarTrabajadores());
         model.addAttribute("listaInstSalud", objIInstitucionSalud.listarInstitucionSalud());
@@ -61,7 +61,7 @@ public class LiquidacionController {
     }
     //Todo: revisar duplica no actualiza
     @PostMapping("/actualizar/{idLiquidacion}")
-    public String actualizarLiquidacion(@ModelAttribute Liquidacion liquidacion, @PathVariable int idLiquidacion) {
+    public String actualizarLiquidacion(@ModelAttribute Liquidacion liquidacion, @PathVariable long idLiquidacion) {
         objILiquidacionService.actualizarLiquidacion(idLiquidacion, liquidacion);
         return "redirect:/liquidacion";
     }
