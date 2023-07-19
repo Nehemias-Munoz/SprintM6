@@ -44,8 +44,8 @@ public class LiquidacionImpl implements ILiquidacionService {
      * @return Object Liquidacion
      */
     @Override
-    public Liquidacion actualizarLiquidacion(Liquidacion liquidacion) {
-        Liquidacion liquidacion1 = this.buscarLiquidacionPorId( liquidacion.getIdLiquidacion());
+    public Liquidacion actualizarLiquidacion(long idLiquidacion,Liquidacion liquidacion) {
+        Liquidacion liquidacion1 = this.buscarLiquidacionPorId(idLiquidacion);
         liquidacion1.setTrabajador(liquidacion.getTrabajador());
         liquidacion1.setPeriodo(liquidacion.getPeriodo());
         liquidacion1.setSueldoImponible(liquidacion.getSueldoImponible());

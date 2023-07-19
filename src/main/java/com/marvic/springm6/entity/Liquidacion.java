@@ -14,7 +14,7 @@ public class Liquidacion {
     @Column(name = "id_liquidacion")
     private long idLiquidacion;
     //Relacion liquidacion - trabajador
-    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL,optional = false)
+    @ManyToOne(fetch = FetchType.EAGER,optional = false)
     @JoinColumn(name = "id_trabajador")
     private Trabajador trabajador;
     @Column
@@ -24,14 +24,14 @@ public class Liquidacion {
     @Column(name = "sueldo_liquido")
     private int sueldoLiquido;
     //Relacion liquidacion - institucion salud
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL,optional = false)
+    @ManyToOne(fetch = FetchType.EAGER,optional = false)
     @JoinColumn(name = "id_inst_salud",nullable = false)
     private InstitucionSalud instSalud;
 
     @Column(name = "monto_inst_salud")
     private int montoInstSalud;
     //Relacion liquidacion - institucion previsional
-    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL,optional = false)
+    @ManyToOne(fetch = FetchType.EAGER,optional = false)
     @JoinColumn(name = "id_inst_previsional",nullable = false)
     private InstitucionPrevision instPrevisional;
 
