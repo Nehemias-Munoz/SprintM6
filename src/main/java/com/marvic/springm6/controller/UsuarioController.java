@@ -32,7 +32,7 @@ public class UsuarioController {
     @PostMapping("/crearUsuario")
     public String crearUsuario(@ModelAttribute Usuario usuario) {
         objIUsuarioService.crearUsuario(usuario);
-        return "listarUsuarios";
+        return "redirect:/listarUsuarios";
     }
 
     @GetMapping("/{idUsuario}")
