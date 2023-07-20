@@ -31,8 +31,11 @@ public class UsuarioController {
 
     @PostMapping("/crearUsuario")
     public String crearUsuario(@ModelAttribute Usuario usuario) {
+        usuario.setFechaCreacion(LocalDateTime.now());
+        //Todo: si se crea como empleador lo registramos en su tabla
+        //Añadir campo en registro usuario para verificar si seran los mismos datos
         objIUsuarioService.crearUsuario(usuario);
-        return "redirect:/listarUsuarios";
+        return "redirect:/usuario";
     }
 
     @GetMapping("/{idUsuario}")

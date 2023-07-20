@@ -1,5 +1,6 @@
 package com.marvic.springm6.controller;
 import com.marvic.springm6.entity.Trabajador;
+import com.marvic.springm6.service.IEmpleadorService;
 import com.marvic.springm6.service.IInstitucionPrevision;
 import com.marvic.springm6.service.IInstitucionSalud;
 import com.marvic.springm6.service.ITrabajadorService;
@@ -19,6 +20,8 @@ public class TrabajadorController {
     IInstitucionSalud objIInstitucionSaludService;
     @Autowired
     IInstitucionPrevision objIInstitucionPrevisionService;
+    @Autowired
+    IEmpleadorService objIEmpleadorService;
 
     @GetMapping
     public String listarTrabajadores(Model model) {
@@ -49,6 +52,7 @@ public class TrabajadorController {
 
     @PostMapping("/editar/{idTrabajador}")
     public String mostrarFormularioEditarTrabajador(@PathVariable int idTrabajador, Model model){
+        model.addAttribute("empleadores", objIEmpleadorService.listarEmpleador());
         model.addAttribute("trabajador", objITrabajadorService.buscarTrabajadorPorId(idTrabajador));
         model.addAttribute("listaInstSalud", objIInstitucionSaludService.listarInstitucionSalud());
         model.addAttribute("listaInstPrevision", objIInstitucionPrevisionService.listarInstitucionPrevision());
