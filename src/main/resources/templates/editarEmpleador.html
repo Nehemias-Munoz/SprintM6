@@ -42,6 +42,7 @@
                             class="form-control"
                             name="nombre"
                             id="nombre"
+                            required
                             th:value="${empleador.getNombre()}"
                     />
                 </div>
@@ -52,6 +53,7 @@
                             class="form-control"
                             name="apellido1"
                             id="apellido1"
+                            required
                             th:value="${empleador.getApellido1()}"
                     />
                 </div>
@@ -68,10 +70,11 @@
                 <div class="mb-3">
                     <label for="telefono">Telefono</label>
                     <input
-                            type="text"
+                            type="tel"
                             class="form-control"
                             name="telefono"
                             id="telefono"
+                            required
                             th:value="${empleador.getTelefono()}"
                     />
                 </div>
@@ -82,6 +85,7 @@
                             name="email"
                             class="form-control"
                             id="email"
+                            required
                             th:value="${empleador.getEmail()}"
                     />
                 </div>
@@ -89,10 +93,21 @@
                     <label for="idUsuario" class="form-label">ID Usuario</label>
                         <select name="usuario.idUsuario" class="form-select" required id="idUsuario">
                             <option class="dropdown-item" th:each="usuario:${usuarios}" th:value="${usuario.idUsuario}"
-                                    th:label="${usuario.nombre}" th:selected="${empleador.usuario.idUsuario == usuario.idUsuario}?'true':'false'"
+                                    th:label="${usuario.idUsuario}+' | '+${usuario.nombre}" th:selected="${empleador.usuario.idUsuario == usuario.idUsuario}?'true':'false'"
                             >
                             </option>
                         </select>
+                </div>
+                <div class="mb-3">
+                    <label for="direccion" class="form-label">Direccion</label>
+                    <input
+                            type="address"
+                            name="direccion"
+                            class="form-control"
+                            id="direccion"
+                            required
+                            th:value="${empleador.getDireccion()}"
+                    />
                 </div>
                 <div class="d-grid gap-2">
                     <button type="submit" class="btn btn-primary btn-lg">
