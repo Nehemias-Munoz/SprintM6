@@ -32,6 +32,7 @@ public class TrabajadorController {
 
     @GetMapping("/crearTrabajador")
     public String mostrarFormularioCrearTrabajador(Model model){
+        model.addAttribute("empleadores",objIEmpleadorService.listarEmpleador());
         model.addAttribute("listaInstSalud", objIInstitucionSaludService.listarInstitucionSalud());
         model.addAttribute("listaInstPrevision", objIInstitucionPrevisionService.listarInstitucionPrevision());
         return "crearTrabajador";
