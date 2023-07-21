@@ -68,10 +68,10 @@
                     <input type="email" name="email" class="form-control" id="email" required/>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Id Usuario</label>
+                    <label class="form-label">Id Usuario | Nombre</label>
                     <select name="usuario.idUsuario" class="form-select" required>
                         <option class="dropdown-item" th:each="usuario:${usuarios}" th:value="${usuario.idUsuario}"
-                                th:label="${usuario.nombre}"
+                                th:label="${usuario.idUsuario}+ ' | ' +${usuario.nombre}"
                         >
                         </option>
                     </select>
