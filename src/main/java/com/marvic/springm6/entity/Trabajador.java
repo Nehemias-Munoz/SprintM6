@@ -38,7 +38,11 @@ public class Trabajador {
     private long telefono;
 
     //Relacion tabla intermedia
-    @ManyToMany(mappedBy = "listaTrabajadores")
+//    @ManyToMany(mappedBy = "listaTrabajadores")
+    @ManyToMany
+    @JoinTable(name = "Empl_Trab",
+            joinColumns = @JoinColumn(name = "id_trabajador", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "id_empleador", nullable = false))
     List<Empleador> listaEmpleadores;
 
     //Todo: consutar persistencia de liquidacion

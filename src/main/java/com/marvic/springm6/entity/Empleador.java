@@ -26,16 +26,17 @@ public class Empleador {
     @Column
     private String email;
     //Relacion usuario
-    @ManyToOne(optional = false,cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @ManyToOne(optional = false,fetch = FetchType.EAGER)
     @JoinColumn(name = "id_usuario",nullable = false)
     private Usuario usuario;
     @Column
     private long telefono;
     //Relacion tabla intermedia
-    @ManyToMany
-    @JoinTable(name = "Empl_Trab",
-            joinColumns = @JoinColumn(name = "id_empleador", nullable = false),
-            inverseJoinColumns = @JoinColumn(name = "id_trabajador", nullable = false))
+//    @ManyToMany
+//    @JoinTable(name = "Empl_Trab",
+//            joinColumns = @JoinColumn(name = "id_empleador", nullable = false),
+//            inverseJoinColumns = @JoinColumn(name = "id_trabajador", nullable = false))
+    @ManyToMany(mappedBy = "listaEmpleadores",cascade = CascadeType.ALL)
     private List<Trabajador> listaTrabajadores;
 
 }
