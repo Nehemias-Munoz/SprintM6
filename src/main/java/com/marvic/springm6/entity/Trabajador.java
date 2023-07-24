@@ -45,8 +45,7 @@ public class Trabajador {
             inverseJoinColumns = @JoinColumn(name = "id_empleador", nullable = false))
     List<Empleador> listaEmpleadores;
 
-    //Todo: consutar persistencia de liquidacion
     //Relacion trabajador - liquidacion
-    @OneToMany(mappedBy = "trabajador")
+    @OneToMany(mappedBy = "trabajador",cascade = CascadeType.ALL)
     List<Liquidacion> listaLiquidaciones;
 }

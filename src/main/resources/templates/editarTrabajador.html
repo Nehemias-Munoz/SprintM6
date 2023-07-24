@@ -19,7 +19,7 @@
 <main class="p-3">
   <section class="container d-flex justify-content-center">
     <div class="card p-3">
-      <h3 class="text-center">Crear Trabajador</h3>
+      <h3 class="text-center">Editar Trabajador</h3>
       <form th:action="@{/trabajador/actualizar/{idTrabajador}(idTrabajador=${trabajador.getIdTrabajador()})}" method="post">
         <div class="mb-3">
           <label for="run">Run</label>
@@ -88,6 +88,14 @@
             <option class="dropdown-item" th:value="${instPrevision.idInstPrevision}"
                     th:label="${instPrevision.descripcion}"
                     th:each="instPrevision:${listaInstPrevision}" th:selected="${trabajador.instPrevision.idInstPrevision == instPrevision.idInstPrevision}?'true':'false'">
+            </option>
+          </select>
+        </div>
+        <div class="my-2">
+          <label class="form-label">Id | Empleador</label>
+          <select name="listaEmpleadores" class="form-select">
+            <option class="dropdown-item" th:each="empleador:${empleadores}" th:value="${empleador.idEmpleador}"
+                    th:label="${empleador.idEmpleador}+ ' | ' +${empleador.nombre}" th:selected="${trabajador.listaEmpleadores.contains(empleador)}">
             </option>
           </select>
         </div>
