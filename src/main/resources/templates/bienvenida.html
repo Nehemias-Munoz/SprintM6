@@ -11,90 +11,100 @@
     />
   </head>
   <body>
-    <header th:include="~{../static/html/header2.html}"></header>
+    <header th:insert="~{../static/html/header2.html}"></header>
     <main class="container">
       <h2 class="text-center my-5" style="font-weight: 700">
         Bienvenido "Usuario"
       </h2>
       <h3 class="text-center mb-5">¿Qué deseas hacer?</h3>
       <section class="row justify-content-center text-center">
-        <div class="col-s-12 col-md-4 col-lg-3">
-          <a href="/usuario/crearUsuario">
-            <div class="card text-bg-dark mb-4" style="max-width: 18rem">
-              <div class="card-body">
-                <h5 class="card-title text-center">CREAR <br />USUARIO</h5>
-              </div>
+        <div
+          class="card text-bg-dark m-2 p-3"
+          style="max-width: 18rem"
+          onclick="window.location.href='/usuario/crearUsuario'"
+        >
+          <div class="col">
+            <div class="card-body">
+              <h5 class="card-title text-center">Crear Usuario</h5>
             </div>
-          </a>
+          </div>
         </div>
-        <div class="col-s-12 col-md-4 col-lg-3">
-          <a href="/empleador/crearEmpleador">
-            <div class="card text-bg-dark mb-4" style="max-width: 18rem">
-              <div class="card-body">
-                <h5 class="card-title text-center">CREAR <br />EMPLEADOR</h5>
-              </div>
+        <div
+          class="card text-bg-dark m-2 p-3"
+          style="max-width: 18rem"
+          onclick="window.location.href='/empleador/crearEmpleador'"
+        >
+          <div class="col">
+            <div class="card-body">
+              <h5 class="card-title text-center">Crear Empleador</h5>
             </div>
-          </a>
+          </div>
         </div>
-        <div class="col-s-12 col-md-4 col-lg-3">
-          <a href="/trabajador/crearTrabajador">
-            <div class="card text-bg-dark mb-4" style="max-width: 18rem">
-              <div class="card-body">
-                <h5 class="card-title text-center">CREAR <br />TRABAJADOR</h5>
-              </div>
+        <div
+          class="card text-bg-dark m-2 p-3"
+          style="max-width: 18rem"
+          onclick="window.location.href='/trabajador/crearTrabajador'"
+        >
+          <div class="col">
+            <div class="card-body">
+              <h5 class="card-title text-center">Crear Trabajador</h5>
             </div>
-          </a>
+          </div>
         </div>
-        <div class="col-s-12 col-md-4 col-lg-3">
-          <a href="/liquidacion/crearLiquidacion">
-            <div class="card text-bg-dark mb-4" style="max-width: 18rem">
-              <div class="card-body">
-                <h5 class="card-title text-center">CREAR <br />LIQUIDACIÓN</h5>
-              </div>
+        <div
+          class="card text-bg-dark m-2 p-3"
+          style="max-width: 18rem"
+          onclick="window.location.href='/liquidacion/crearLiquidacion'"
+        >
+          <div class="col">
+            <div class="card-body">
+              <h5 class="card-title text-center">Crear Liquidacion</h5>
             </div>
-          </a>
+          </div>
         </div>
-        <div class="col-s-12 col-md-4 col-lg-3">
-          <a href="/usuario">
-            <div class="card text-bg-dark mb-4" style="max-width: 18rem">
-              <div class="card-body">
-                <h5 class="card-title text-center">
-                  Ver y/o editar <br />usuario
-                </h5>
-              </div>
+        <div
+          class="card text-bg-dark m-2 p-3"
+          style="max-width: 18rem"
+          onclick="window.location.href='/usuario'"
+        >
+          <div class="col">
+            <div class="card-body">
+              <h5 class="card-title text-center">Ver y/o editar usuario</h5>
             </div>
-          </a>
+          </div>
         </div>
-        <div class="col-s-12 col-md-4 col-lg-3">
-          <a href="/empleador">
-            <div class="card text-bg-dark mb-4" style="max-width: 18rem">
-              <div class="card-body">
-                <h5 class="card-title text-center">Ver y/o editar empleador</h5>
-              </div>
+        <div
+          class="card text-bg-dark m-2 p-3"
+          style="max-width: 18rem"
+          onclick="window.location.href='/usuario'"
+        >
+          <div class="col">
+            <div class="card-body">
+              <h5 class="card-title text-center">Ver y/o editar empleador</h5>
             </div>
-          </a>
+          </div>
         </div>
-        <div class="col-s-12 col-md-4 col-lg-3">
-          <a href="/trabajador">
-            <div class="card text-bg-dark mb-4" style="max-width: 18rem">
-              <div class="card-body">
-                <h5 class="card-title text-center">
-                  Ver y/o editar trabajador
-                </h5>
-              </div>
+        <div
+          class="card text-bg-dark m-2 p-3"
+          style="max-width: 18rem"
+          onclick="window.location.href='/trabajador'"
+        >
+          <div class="col">
+            <div class="card-body">
+              <h5 class="card-title text-center">Ver y/o editar trabajador</h5>
             </div>
-          </a>
+          </div>
         </div>
-        <div class="col-s-12 col-md-4 col-lg-3">
-          <a href="/liquidacion">
-            <div class="card text-bg-dark mb-4" style="max-width: 18rem">
-              <div class="card-body">
-                <h5 class="card-title text-center">
-                  Ver y/o editar liquidación
-                </h5>
-              </div>
+        <div
+          class="card text-bg-dark m-2 p-3"
+          style="max-width: 18rem"
+          onclick="window.location.href='/liquidacion'"
+        >
+          <div class="col">
+            <div class="card-body">
+              <h5 class="card-title text-center">Ver y/o editar liquidacion</h5>
             </div>
-          </a>
+          </div>
         </div>
       </section>
 
@@ -104,7 +114,7 @@
       </h4>
     </main>
 
-    <footer th:include="~{../static/html/footer.html}"></footer>
+    <footer th:insert="~{../static/html/footer.html}"></footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
