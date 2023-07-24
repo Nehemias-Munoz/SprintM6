@@ -47,6 +47,6 @@ public class Trabajador {
 
     //Todo: consutar persistencia de liquidacion
     //Relacion trabajador - liquidacion
-    @OneToMany(mappedBy = "trabajador")
+    @OneToMany(mappedBy = "trabajador",cascade = CascadeType.ALL)
     List<Liquidacion> listaLiquidaciones;
 }

@@ -99,10 +99,10 @@
                     </select>
                 </div>
                 <div class="my-2">
-                    <label class="form-label">Run | Empleador</label>
+                    <label class="form-label">Id | Empleador</label>
                     <select name="listaEmpleadores" class="form-select">
                         <option class="dropdown-item" th:each="empleador:${empleadores}" th:value="${empleador.idEmpleador}"
-                                th:label="${empleador.run}+ ' | ' +${empleador.nombre}">
+                                th:label="${empleador.idEmpleador}+ ' | ' +${empleador.nombre}">
                         </option>
                     </select>
                 </div>
