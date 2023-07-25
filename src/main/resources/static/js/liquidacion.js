@@ -14,7 +14,7 @@ $(document).ready(() => {
         const idTrabajador = document.getElementById("idTrabajador").value;
 
         //CONSUMO LA API CON EL ID DEL TRABAJADOR SELECCIONADO
-        fetch(url + "/" + 1)
+        fetch(url + "/" + idTrabajador)
             .then((response) => {
                 // Verifica si la respuesta fue exitosa (código de estado 200)
                 if (!response.ok) {
@@ -31,13 +31,19 @@ $(document).ready(() => {
 
                 //AGREGO LA AFP QUE CORRESPONDE AL TRABAJADOR EN EL FORMULARIO
                 const nombreAfp = document.getElementById("instPrevision");
-                nombreAfp.value = descripcionPrevision;
-                nombreAfp.id = idPrevision;
+                const optionPrevision = document.createElement('option');
+                optionPrevision.value = trabajador.instPrevision.idInstPrevision;
+                optionPrevision.text = descripcionPrevision
+                nombreAfp.appendChild(optionPrevision);
+
 
                 //AGREGO LA INST. DE SALUD QUE CORRESPONDE AL TRABAJADOR EN EL FORMULARIO
-                const nombreSalud = document.getElementById("instSalud");
-                nombreSalud.value = descripcionSalud;
-                nombreSalud.id = idSalud;
+                const selectNombreInstSalud = document.getElementById("instSalud");
+                const optionSalud = document.createElement('option');
+                optionSalud.value = trabajador.instSalud.idInstSalud;
+                optionSalud.text = descripcionSalud
+                selectNombreInstSalud.appendChild(optionSalud);
+
                 //Definicion de porcDcto
                 porcDctoSalud = trabajador.instSalud.porcDcto;
                 porcDctoPrevision = trabajador.instPrevision.porcDcto;
