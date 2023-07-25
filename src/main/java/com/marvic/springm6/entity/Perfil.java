@@ -1,5 +1,6 @@
 package com.marvic.springm6.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,6 +17,7 @@ public class Perfil {
     private String descripcion;
     @Column
     private boolean estado;
+    @JsonIgnore
     @OneToMany(mappedBy = "perfil")
     private List<Usuario> listaUsuarios;
 }

@@ -1,5 +1,6 @@
 package com.marvic.springm6.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,11 +17,10 @@ public class InstitucionPrevision {
     private String descripcion;
     @Column(name = "porc_dcto")
     private float porcDcto;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "instPrevision")
     List<Trabajador> listaTrabajadores;
-
-
+    @JsonIgnore
     @OneToMany(mappedBy = "instPrevisional")
     List<Liquidacion> listaLiquidaciones;
 

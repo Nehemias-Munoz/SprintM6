@@ -1,5 +1,6 @@
 package com.marvic.springm6.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -25,6 +26,7 @@ public class Trabajador {
     private String email;
 
     //Relacion trabajador - inst. prevision
+    
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "id_inst_prevision",nullable = false)
     private InstitucionPrevision instPrevision;
@@ -39,6 +41,7 @@ public class Trabajador {
 
     //Relacion tabla intermedia
 //    @ManyToMany(mappedBy = "listaTrabajadores")
+    @JsonIgnore
     @ManyToMany
     @JoinTable(name = "Empl_Trab",
             joinColumns = @JoinColumn(name = "id_trabajador", nullable = false),
@@ -46,6 +49,7 @@ public class Trabajador {
     List<Empleador> listaEmpleadores;
 
     //Relacion trabajador - liquidacion
+    @JsonIgnore
     @OneToMany(mappedBy = "trabajador",cascade = CascadeType.ALL)
     List<Liquidacion> listaLiquidaciones;
 }

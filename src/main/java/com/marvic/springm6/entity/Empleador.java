@@ -1,5 +1,6 @@
 package com.marvic.springm6.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -36,6 +37,7 @@ public class Empleador {
 //    @JoinTable(name = "Empl_Trab",
 //            joinColumns = @JoinColumn(name = "id_empleador", nullable = false),
 //            inverseJoinColumns = @JoinColumn(name = "id_trabajador", nullable = false))
+    @JsonIgnore
     @ManyToMany(mappedBy = "listaEmpleadores",cascade = CascadeType.ALL)
     private List<Trabajador> listaTrabajadores;
 

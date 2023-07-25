@@ -1,5 +1,6 @@
 package com.marvic.springm6.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
@@ -26,6 +27,7 @@ public class Usuario {
     @Column(name = "apellido_2")
     private String apellido2;
     // Relacion usuario-perfil
+    @JsonIgnore
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
     @JoinColumn(name = "id_perfil", nullable = false)
     private Perfil perfil;
@@ -36,6 +38,7 @@ public class Usuario {
     @Column
     private long telefono;
     // Relacion usuario-empleador
+    @JsonIgnore
     @OneToMany(mappedBy = "usuario")
     List<Empleador> listaEmpleador;
 }

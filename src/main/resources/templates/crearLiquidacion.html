@@ -64,7 +64,7 @@
         </div>
         <div class="mb-3">
           <label class="form-label">Institucion Salud</label>
-          <select name="instSalud" class="form-select">
+          <select name="instSalud" class="form-select" disabled>
             <option class="dropdown-item" th:each="instSalud:${listaInstSalud}" th:value="${instSalud.idInstSalud}"
                     th:label="${instSalud.descripcion}"
             >
@@ -74,16 +74,16 @@
         <div class="mb-3">
           <label for="montoInstSalud">Monto Institucion Salud</label>
           <input
+                  disabled
                   type="number"
                   class="form-control"
                   name="montoInstSalud"
                   id="montoInstSalud"
-                  required
           />
         </div>
         <div class="mb-3">
           <label class="form-label">Institucion Prevision</label>
-          <select name="instPrevisional" class="form-select">
+          <select name="instPrevisional" class="form-select" disabled>
             <option class="dropdown-item" th:value="${instPrevision.idInstPrevision}"
                     th:label="${instPrevision.descripcion}"
                     th:each="instPrevision:${listaInstPrevision}">
@@ -97,7 +97,6 @@
                   class="form-control"
                   name="montoInstPrevisional"
                   id="montoInstPrevision"
-                  required
           />
         </div>
         <div class="mb-3">
@@ -139,5 +138,6 @@
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"
 ></script>
+<script th:src="~{../static/js/liquidacion.js}"></script>
 </body>
 </html>
