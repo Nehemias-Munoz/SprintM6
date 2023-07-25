@@ -23,7 +23,8 @@
       <form th:action="@{/liquidacion/crearLiquidacion}" method="post">
         <div class="mb-3">
           <label for="idTrabajador">Trabajador</label>
-          <select name="trabajador.idTrabajador" class="form-select" required id="idTrabajador">
+          <select name="idTrabajador" class="form-select" required id="idTrabajador">
+            <option class="dropdown-item">Seleccione trabajador</option>
             <option class="dropdown-item" th:each="trabajador:${trabajadores}" th:value="${trabajador.idTrabajador}"
                     th:label="${trabajador.nombre}"
             >
@@ -60,16 +61,18 @@
                   name="sueldoLiquido"
                   id="sueldoLiquido"
                   required
+                  readonly
           />
         </div>
         <div class="mb-3">
           <label class="form-label">Institucion Salud</label>
-          <select name="instSalud" class="form-select" disabled>
-            <option class="dropdown-item" th:each="instSalud:${listaInstSalud}" th:value="${instSalud.idInstSalud}"
-                    th:label="${instSalud.descripcion}"
-            >
-            </option>
-          </select>
+          <input id="instSalud" type="text" class="form-control" name="instSalud" disabled>
+<!--          <select name="instSalud" class="form-select" disabled id="instSalud">-->
+<!--            <option class="dropdown-item" th:each="instSalud:${listaInstSalud}" th:value="${instSalud.idInstSalud}"-->
+<!--                    th:label="${instSalud.descripcion}"-->
+<!--            >-->
+<!--            </option>-->
+<!--          </select>-->
         </div>
         <div class="mb-3">
           <label for="montoInstSalud">Monto Institucion Salud</label>
@@ -83,7 +86,7 @@
         </div>
         <div class="mb-3">
           <label class="form-label">Institucion Prevision</label>
-          <select name="instPrevisional" class="form-select" disabled>
+          <select id="instPrevision" name="instPrevisional" class="form-select" disabled>
             <option class="dropdown-item" th:value="${instPrevision.idInstPrevision}"
                     th:label="${instPrevision.descripcion}"
                     th:each="instPrevision:${listaInstPrevision}">
@@ -138,6 +141,7 @@
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"
 ></script>
-<script th:src="~{../static/js/liquidacion.js}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+<script th:src="@{/js/liquidacion.js}"></script>
 </body>
 </html>

@@ -41,6 +41,7 @@
                 <td th:text="${empleador.run}"></td>
                 <td th:text="${empleador.nombre}"></td>
                 <td th:text="${empleador.apellido1}"></td>
+
                 <td th:text="${empleador.apellido2.isBlank()}?'No asignado':${empleador.apellido2}"></td>
                 <td th:text="${empleador.direccion}"></td>
                 <td th:text="${empleador.email}"></td>
