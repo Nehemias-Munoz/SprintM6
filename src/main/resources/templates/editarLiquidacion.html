@@ -40,6 +40,7 @@
                             name="periodo"
                             id="periodo"
                             th:value="${liquidacion.getPeriodo()}"
+                            readonly
                     />
                 </div>
                 <div class="mb-3">
@@ -62,11 +63,12 @@
                             name="sueldoLiquido"
                             id="sueldoLiquido"
                             th:value="${liquidacion.getSueldoLiquido()}"
+                            readonly
                     />
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Institucion Salud</label>
-                    <select name="instSalud" class="form-select" disabled>
+                    <select name="instSalud" class="form-select">
                         <option class="dropdown-item" th:each="instSalud:${listaInstSalud}"
                                 th:value="${instSalud.idInstSalud}"
                                 th:label="${instSalud.descripcion}"
@@ -83,12 +85,12 @@
                             name="montoInstSalud"
                             id="montoInstSalud"
                             th:value="${liquidacion.getMontoInstSalud()}"
-                            disabled
+                            readonly
                     />
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Institucion Prevision</label>
-                    <select name="instPrevisional" class="form-select" disabled>
+                    <select name="instPrevisional" class="form-select">
                         <option class="dropdown-item" th:value="${instPrevision.idInstPrevision}"
                                 th:label="${instPrevision.descripcion}"
                                 th:each="instPrevision:${listaInstPrevision}"
@@ -105,7 +107,7 @@
                             name="montoInstPrevisional"
                             id="montoInstPrevision"
                             th:value="${liquidacion.getMontoInstPrevisional()}"
-                            disabled
+                            readonly
                     />
                 </div>
                 <div class="mb-3">
@@ -116,6 +118,7 @@
                             name="totalDescuento"
                             id="totalDescuento"
                             th:value="${liquidacion.getTotalDescuento()}"
+                            readonly
                     />
                 </div>
                 <div class="mb-3">
@@ -126,6 +129,7 @@
                             name="totalHaberes"
                             id="totalHaberes"
                             th:value="${liquidacion.getTotalHaberes()}"
+                            readonly
                     />
                 </div>
                 <div class="mb-3">
