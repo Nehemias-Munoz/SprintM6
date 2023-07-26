@@ -65,38 +65,18 @@ $(document).ready(() => {
     const obtenerAnticipo = () => {
         const anticipoInput = document.getElementById("anticipo");
         anticipo = parseFloat(anticipoInput.value) || 0; // Si no se ingresa valor, se considera 0 como anticipo
-        // calcularDatos(); // Llamamos a calcularDatos después de obtener el anticipo para actualizar el "Total Haber"
+        calcularDatos(); // Llamamos a calcularDatos después de obtener el anticipo para actualizar el "Total Haber"
     };
 
     // Evento change para capturar el anticipo al momento de ingresarlo
-    // document.getElementById("anticipo").addEventListener("change", obtenerAnticipo);
+    document.getElementById("anticipo").addEventListener("change", obtenerAnticipo);
 
-    // Función para actualizar los campos ocultos y enviar el formulario
-    const actualizarFormulario = () => {
-        // Obtener los valores calculados
-        const sueldoImponible = parseFloat(document.getElementById("sueldoImponible").value);
-        const porcentajeDctoAFP = descuentoAFP(parseInt(idPrevision));
-        const porcentajeDctoSalud = descuentoSalud(parseInt(idSalud));
-        const dctoFinalAfp = Math.round(sueldoImponible * (porcentajeDctoAFP / 100));
-        const dctoFinalSalud = Math.round(sueldoImponible * (porcentajeDctoSalud / 100));
-        const totalDescuentos = dctoFinalAfp + dctoFinalSalud;
-        const sueldoLiquido = sueldoImponible - totalDescuentos - anticipo;
-
-        // Actualizar los campos ocultos con los valores calculados
-        document.getElementById("idMontoSalud").value = dctoFinalSalud;
-        document.getElementById("idMontoAFP").value = dctoFinalAfp;
-        document.getElementById("idTotalDscts").value = totalDescuentos;
-        document.getElementById("idTotalHaber").value = sueldoImponible;
-        document.getElementById("idAnticipo").value = anticipo;
-        document.getElementById("idSueldoLiquido").value = sueldoLiquido;
-
-    };
 
     // Función para calcular los datos y actualizar los campos
 
     function calcularDatos() {
-        let sueldoImponibleInput = document.getElementById("sueldoImponible");
-        let sueldoImponible = parseFloat(sueldoImponibleInput.value);
+        let inputSueldoImponible = document.getElementById("sueldoImponible");
+        let sueldoImponible = parseFloat(inputSueldoImponible.value);
 
 
         // Realizar los cálculos con el sueldo imponible y el porcentaje de descuento
@@ -129,19 +109,8 @@ $(document).ready(() => {
         const inputSueldoLiquidoInput = document.getElementById("sueldoLiquido");
         inputSueldoLiquidoInput.value = sueldoLiquido;
 
-        console.log("Sueldo imponible ingresado:", sueldoImponible);
-        console.log("Porcentaje de descuento AFP:", porcDctoPrevision);
-        console.log("Descuento AFP calculado:", dctoFinalAfp);
-        console.log("Porcentaje de descuento Salud:", inputPorcDsctoSalud);
-        console.log("Descuento Salud calculado:", dctoFinalSalud);
-        console.log("Total Descuentos:", totalDescuentos);
-        console.log("Sueldo Líquido:", sueldoLiquido);
     }
 
     document.getElementById("sueldoImponible").addEventListener("change", calcularDatos);
-    // Evento submit para enviar el formulario
-    // document.getElementById("contactForm").addEventListener("submit", (event) => {
-    //     event.preventDefault();
-    //     actualizarFormulario();
-    // });
+
 });
